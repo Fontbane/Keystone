@@ -1,0 +1,35 @@
+#ifndef __BIKE_H__
+#define __BIKE_H__
+
+#include "constants/bf_types.h"
+
+#define BIKEPROG_HOP		0x01
+#define BIKEPROG_SIDEHOP	0x02
+#define BIKEPROG_SIDESLIDE	0x03
+#define BIKEPROG_GEAR_SHIFT	0x04
+#define BIKEPROG_BACKWARDS	0x08
+#define BIKEPROG_WHEELIE	0x10
+
+typedef enum {
+	BIKEPWR_HOP,
+	BIKEPWR_SIDEHOP,
+	BIKEPWR_SIDESLIDE,
+	BIKEPWR_GEAR_SHIFT,
+	BIKEPWR_BACKWARDS,
+	BIKEPWR_WHEELIE
+} BikePower;
+
+enum {
+	BIKECMD_HOP,			//A
+	BIKECMD_SIDEHOP,		//A+DIR
+	BIKECMD_SIDESLIDE,		//ZL+DIR
+	BIKECMD_GEAR_SHIFT,		//B
+	BIKECMD_GRIND,			//ZL < THRESH
+	BIKECMD_BRAKE,			//ZL >= THRESH
+	BIKECMD_BACKWARDS,		//Click joystick to toggle
+	BIKECMD_DRIVE,			//ZR < THRESH
+	BIKECMD_THROTTLE,		//ZR >= THRESH
+	BIKECMD_WHEELIE			//Right Joystick
+};
+
+#endif /*!__BIKE_H__!*/
